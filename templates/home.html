@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load static %}
+
+  {% if user.is_authenticated %}				
+    	
+    {% include "booking.html" %}
+  {% else %}
+    <div class="center">
+      <button class="book-now-btn" onclick="window.location.href='/register'">Book Now</button>
+    </div>
+  {% endif %}
+
+  <style>
+	
+    body {
+      background-image: url('{% static "fli.jpg" %}');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+	
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .book-now-btn {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  
+  </style>
+{% endblock %}

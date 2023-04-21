@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %} 
+<link rel="stylesheet" href="{% static 'book.css'%}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking</title>
+</head>
+<body>
+   
+    <form method="POST">
+        {% csrf_token %}
+        <label for="flight-number">Flight Number:</label>
+        <input type="text" id="flight-number" name="flight_number" required>
+    
+        <label for="departure-city">Departure City:</label>
+        <input type="text" id="departure-city" name="departure_city" required>
+    
+        <label for="arrival-city">Arrival City:</label>
+        <input type="text" id="arrival-city" name="arrival_city" required>
+    
+        <label for="departure-time">Departure Time:</label>
+        <input type="datetime-local" id="departure-time" name="departure_time" required>
+    
+        <label for="arrival-time">Arrival Time:</label>
+        <input type="datetime-local" id="arrival-time" name="arrival_time" required>
+    
+        <button type="submit">Book Flight</button>
+      </form>
+    
+</body>
+</html>
